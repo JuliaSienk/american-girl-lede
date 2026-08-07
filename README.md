@@ -1,6 +1,6 @@
 # Who gets to be an American Girl? 
 
-## by Julia Sienkiewicz
+### by Julia Sienkiewicz
 ### Lede Program Summer 2026
 
 Who gets to be an American Girl? This project explores the promise (and limits) of representation through American Girl Dolls. 
