@@ -6,7 +6,7 @@
 Who gets to be an American Girl? This project explores the promise (and limits) of representation through American Girl Dolls. 
 
 #### What I hoped to accomplish:
-I aimed to take my masters' capstone - a static, kinda boring deep dive - into an interactive story that would allow the key takeaways to shine through. I wanted something that would lalow
+I aimed to take my masters' capstone - a static, kinda boring deep dive - into an interactive story that would allow the key takeaways to shine through. I wanted something that would allow. 
 
 Artifacts of my previous analysis can be found in the "roads-not-taken" folder. 
 
@@ -16,3 +16,4 @@ The original dataset on the dolls and their features was found courtesy of colle
 #### Skills & where I grew the most: 
 I learned when to quit when inspiration strikes. 
 
+#### The next evolution of this project: 
