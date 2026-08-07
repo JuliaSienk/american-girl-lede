@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build-A-Girl: The Limits of Representation</title>
+<!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="doll-builder-limits.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="top">
+    <div class="masthead">The Catalog Desk</div>
+    <div class="issue" id="issueDate"></div>
+</header>
+<h1 class="title">Who Gets to be an American Girl?</h1>
+<br>
+
+<h2>American Girl rose to icon status by promising young girls that they could see themselves in history.
+Forty years later, does this promise still hold up? </h2> 
+<br>
+
+<p>
+  Imagine the heroine of your favorite story sitting next to you, along with her outfits, toys, furniture, and more, 
+  exactly as described in her stories. <br><br> This was the pitch of American Girl Dolls as launched in 1986: each doll was a distinct companion for girls
+  ages 8-12. These dolls were both fictional characters and physical toys, not designed for the same kind of open-ended play in the 
+  way most others are. The toys, school supplies, outfits,  and even their furniture are presented as bespoke historical recreations in miniature. 
+  This detailed backstory came at a premium; American Girl quickly became both status symbol and aspirational.
+</p>
+
+<h2> In the early days of The Pleasant Company, adding a new historical character to the product line took years of development. </h2>
+<br>
+
+</div><!-- /.wrap -->
+
+<!-- timeline: original six historical dolls. Text below is placeholder — swap in real
+     years/sentences. data-media on each .step (1-4) controls which sticky image layers
+     are visible; images accumulate as you scroll (see .media-layer / .timeline .step > div
+     in doll-builder-limits.css). Replace the four PLACEHOLDER image srcs with the real files. -->
+<section class="scrolly-container timeline" id="og-six">
+  <div class="sticky-thing">
+    <img class="media-layer" data-layer="1" src="images/kirsten-spotlight.jpg" alt="Kirsten spotlight">
+    <img class="media-layer" data-layer="2" src="images/samantha-spotlight.jpg" alt="Samantha spotlight">
+    <img class="media-layer" data-layer="3" src="images/molly-spotlight.jpg" alt="Molly spotlight">
+    <img class="media-layer" data-layer="4" src="images/felicity-spotlight.jpg" alt="Felicity spotlight">
+    <img class="media-layer" data-layer="5" src="images/addy-spotlight.jpg" alt="Addy spotlight">
+    <img class="media-layer" data-layer="6" src="images/josefina-spotlight.jpg" alt="Josefina spotlight">
+  </div>
+  <div class="steps-container">
+    <div class="step" data-media="1">
+      <div>
+        <div class="era">Midwest Pioneer Times (1854)</div>
+        <div class="year">1986</div>
+        <div class="doll-name">Kirsten Larson</div>
+        <p>Kirsten's pioneer story - immigrating from Sweden to Minnesota territory - capitalized on the 80s popularity of Little House on the Prairie. </p>
+      </div>
+    </div>
+    <div class="step" data-media="2">
+      <div>
+        <div class="era">The Progressive Era (1904)</div>
+        <div class="year">1986</div>
+        <div class="doll-name">Samantha Parkington</div>
+        <p>Samantha's stories focus on emerging ideas of womanhood clashing with Victorian morals at the start of the 20th century.</p>
+      </div>
+    </div>
+    <div class="step" data-media="3">
+      <div>
+        <div class="era">WW2 on the Homefront (1944)</div>
+        <div class="year">1986</div>
+        <div class="doll-name">Molly McIntire</div>
+        <p>Molly's dad is deployed and her mother enters in the workforce as a result of the war.</p>
+      </div>
+    </div>
+    <div class="step" data-media="4">
+      <div>
+        <div class="era">Revolutionary War (1774)</div>
+        <div class="year">1991</div>
+        <div class="doll-name">Felicity Merriman</div>
+        <p>Felicity witnesses key events of the Revolutionary War in Colonial Williamsburg.</p>
+      </div>
+    </div>
+    <div class="step" data-media="5">
+      <div>
+        <div class="era">Civil War (1864)</div>
+        <div class="year">1993</div>
+        <div class="doll-name">Addy Walker</div>
+        <p>Addy is the first African-American character; her story begins by escaping enslavement with her mother.</p>
+      </div>
+    </div>
+    <div class="step" data-media="6">
+      <div>
+        <div class="era">Spanish Territories (1824)</div>
+        <div class="year">1997</div>
+        <div class="doll-name">Josefina Montoya</div>
+        <p>The first Hispanic doll and the last character to be released before the Mattel acquisition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('og-six');
+  if(!root) return;
+  var steps = root.querySelectorAll('.step');
+  var layers = root.querySelectorAll('.media-layer');
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var step = entry.target;
+      steps.forEach(function(s){ s.classList.toggle('is-active', s === step); });
+      var media = Number(step.dataset.media);
+      layers.forEach(function(layer){
+        layer.classList.toggle('is-visible', Number(layer.dataset.layer) <= media);
+      });
+    });
+  });
+
+  steps.forEach(function(step){ observer.observe(step); });
+})();
+</script>
+
+<div class="wrap">
+
+<p>Not exactly the most scalable model. Something needed to change. </p>
+
+<p>In 1995, the company expanded their lineup dramatically with "Truly Me" dolls. 
+  While not composed of individual characters like the historical line, the promise was a diverse range of features
+  that would give girls a chance to find a doll that reflects who they are. This expansion made the company profitable and desirable enough 
+  to be acquired by Mattel in 1998. Later on, more attempts to bring detailed characters into a modern context
+  package would manifest with limited-run "Girl of the Year" characters and a flash-in-the-pan "Contemporary" line. 
+</p> 
+
+<br>
+<h2>The Build-a-Girl Model</h2>
+
+  <p>Every doll below is a real record from the American Girl inventory list — 
+    skin tone, face mold, hair color, and eye color.
+    Try to find yourself in the full lineup in each of these features...
+    then see whether the girl you're building actually exists.</p>
+
+  <div class="datasetline" id="datasetFlag"></div>
+
+  <div id="app"></div>
+
+
+
+<h2>The more you build, the more the larger picture of the lineup begins to emerge. </h2>
+
+<p>A catalog that feels expansive at the level of the individual doll can look surprisingly narrow when viewed as a whole. 
+  There are different skin tones, hair and eye colors, and the promise of infinite ways to style your girl. 
+  But those differences aren't distributed evenly; they cluster. Some traits appear frequently; others are rare. 
+  Some combinations are readily available; others barely exist. Allegedly, the market determines which versions of girlhood are easiest to manufacture, package and sell... 
+  but depending on your desires, there are some glaring omissions. 
+</p>
+
+<p>
+  That distinction matters because representation goes beyond a menu of all possible features. It is a matter of which options can coexist. 
+  A brand can offer a wide range of individual traits while still producing a relatively small range of complete identities. 
+  The right question to ask isn't “How many kinds of girs are possible?”, rather “Which girls keep showing up?”
+</p>
+
+<p>
+There is a paradox in the promise of infinite possibility as it coexists with a very finite product line. American Girl can hand a child a menu of choices that 
+feels personal and empowering--but the limitations to this menu have already been designed and priced for optimal profit. 
+</p>
+
+
+<h2>As of 2026...</h2>
+
+<div class="stat-callout-row">
+  <div class="stat-callout-sm">
+    <div class="big">8.4%</div>
+    <div class="sub">of U.S. children identify as multiracial</div>
+  </div>
+  <div class="stat-callout-sm">
+    <div class="big">22%</div>
+    <div class="sub">of U.S. children speak a language other than English at home.</div>
+  </div>
+  <div class="stat-callout-sm">
+    <div class="big">1 in 4</div>
+    <div class="sub">children in the U.S. lives in an immigrant family.</div>
+  </div>
+  <div class="kicker">Source: <a href="https://www.girlscouts.org/content/dam/gsusa/forms-and-documents/discover/about-us/26_StateoftheGirl_Report.pdf">State of the Girl 2026</a></div>
+</div>
+
+
+<h2>Of course, American Girl can't make every possible girl. No toy company can.</h2>
+
+<p>
+Every additional face mold, hair texture, body type, accessory or outfit is another product to design, manufacture, distribute and sell. 
+Representation has to coexist with the basic economics of making things.
+</p>
+
+<p>
+This doesn't necessarily mean that someone at American Girl is sitting around deciding which girls deserve to exist, the process is subtler, more obscure.  
+A corporation responds to research, demand, manufacturing constraints and assumptions about what families will buy - most of which at this scale is a purely internal. 
+Some forms of difference become profitable products, others remain outside the catalog because they are harder to package, scale, predict, or market effectively. Risk-aversion 
+is often the name of the game. 
+</p>
+
+<p>
+  American Girl is still as of publication a Mattel subsidiary, nostalgic attachments fostered by the brand over four decades notwithstanding. When a corporation of such 
+  scale sells a version of diversity, it is making decisions about which differences to foreground, which combinations to make available and which kinds of girlhood are worth turning into inventory. 
+  The result may be more inclusive than what came before while still being shaped by limitations of the market, audience expectations, unconscious biases, and more. 
+</p>
+
+<p>
+  American Girl's achievement isn't that it has finally figured out how to represent every girl. It is that it has made the boundaries of representation 
+  feel customizable. But looking at the lineup and its limitations, a big question question still remains when we are invited to find ourselves and create our own stories in a brand, 
+  how much freedom do we have to push beyond the decisions someone has already made about what to sell us?
+</p>
+
+
+<div class="stat-callout">
+  <div class="box">
+    <div class="big">9828</div>
+    <div class="sub">possible combinations.</div>
+    <div class="kicker">We've got quite a ways to go.</div>
+  </div>
+</div> 
+
+
+<footer>
+  For additional details and documentation, please check out <a href="">my Github repo</a>. 
+</footer>
+
+</div>
+
+
+
+<!-- Mini-Game Below with Embedded Data-->  
+
+<script>
+/* =====================================================================
+   DATA — parsed at runtime from the uploaded inventory CSV. Columns:
+   doll_name, doll_line, eye_color_real, hair_color, face_mold,
+   skin_color, skin_tone
+   ===================================================================== */
+const RAW_CSV = `doll_name,doll_line,eye_color_real,hair_color,face_mold,skin_color,skin_tone
+Addy Walker,Historical,Brown,Black,Addy,Dark,33
+Blaire Wilson,GOTY,Green,Red,Josefina,Light,5
+Caroline Abbott,Historical,Blue-green,Blonde,Classic,Light,10
+Cecile Rey,Historical,Hazel,Brown,Sonali,Dark,30
+Chrissa Maxwell,GOTY,Light Blue,Brown,Josefina,Light,10
+Claudie Wells,Historical,Brown,Black,Claudie,Dark,35
+Corinne Tan,GOTY,Brown,Black,Corinne,Light,10
+Costco Sparkling Ballerina,Truly Me,Light Blue,Blonde,Classic,Light,10
+Courtney Moore,Historical,Blue,Caramel,Classic,Light,10
+Elizabeth Cole,Historical,Light Blue,Blonde,Josefina,Light,10
+Emily Bennett,Historical,Light Blue,Red,Classic,Light,10
+Evette Peeters,Contemporary,Grey,Caramel,Josefina,Medium,20
+Felicity Merriman,Historical,Light Green,Red,Classic,Light,10
+Gabriella McBride,GOTY,Brown,Brown,Sonali,Dark,30
+Grace Thomas,GOTY,Light Blue,Brown,Josefina,Light,10
+Gwen Thompson,GOTY,Brown,Blonde,Classic,Light,10
+Isabel Hoffman,Historical,Light Green,Blonde,Joss,Light,10
+Isabelle Palmer,GOTY,Hazel,Blonde,Classic,Light,10
+Ivy Ling,Historical,Brown,Black,Jess,Light,10
+Jess McConnell,GOTY,Brown,Black,Jess,Light,10
+Josefina Montoya,Historical,Brown,Black,Josefina,Medium,20
+Joss Kendrick,GOTY,Brown,Brown,Joss,Light,10
+Julie Albright,Historical,Brown,Blonde,Josefina,Light,10
+Kailey Hopkins,GOTY,Brown,Blonde,Classic,Light,10
+Kanani Akina,GOTY,Hazel,Brown,Jess,Medium,20
+Kavi Sharma,GOTY,Brown,Black,Marie-Grace,Medium,20
+Kaya'aton'my,Historical,Dark Brown,Black,Kaya,Medium,23
+Kira Bailey,GOTY,Green,Blonde,Josefina,Light,3
+Kirsten Larson,Historical,Light Blue,Blonde,Classic,Light,10
+Kit Kittredge,Historical,Dark Blue,Blonde,Classic,Light,10
+Lanie Holland,GOTY,Hazel,Blonde,Classic,Light,10
+Lea Clark,GOTY,Hazel,Caramel,Josefina,Medium,20
+Lila Monetti,GOTY,Brown,Caramel,Josefina,Light,10
+Lindsey Bergman,GOTY,Light Blue,Brown,Classic,Light,10
+Logan Everett,Contemporary,Grey,Brown,Kaya,Light,10
+Luciana Vega,GOTY,Brown,Brown,Josefina,Medium,20
+Makena Williams,Contemporary,Brown,Brown,Makena,Dark,35
+Marie-Grace Gardner,Historical,Blue-green,Brown,Marie-Grace,Light,10
+Marisol Luna,GOTY,Brown,Brown,Josefina,Medium,20
+Maritza Ochoa,Contemporary,Brown,Brown,Joss,Medium,25
+Maryellen Larkin,Historical,Hazel,Red,Classic,Light,10
+McKenna Brooks,GOTY,Light Blue,Caramel,Josefina,Light,10
+Melody Ellison,Historical,Brown,Black,Sonali,Dark,30
+Mia St. Clair,GOTY,Hazel,Red,Classic,Light,10
+Molly McIntire,Historical,Grey,Brown,Classic,Light,10
+Nanea Mitchell,Historical,Hazel,Black,Nanea,Medium,20
+Nellie O'Malley,Historical,Dark Blue,Red,Josefina,Light,10
+Nicki Fleming,GOTY,Light Blue,Caramel,Classic,Light,10
+Nicki Hoffman,Historical,Blue,Brown,Joss,Light,10
+Rebecca Rubin,Historical,Hazel,Brown,Josefina,Light,10
+Ruthie Smithens,Historical,Grey,Black,Classic,Light,10
+Saige Copeland,GOTY,Turquoise,Red,Classic,Light,10
+Samantha Parkington,Historical,Brown,Brown,Classic,Light,10
+Sonali Matthews,GOTY,Brown,Black,Sonali,Dark,30
+Tenney Grant,Contemporary,Light Brown,Blonde,Classic,Light,10
+Truly Me 1,Truly Me,Dark Brown,Black,Addy,Dark,33
+Truly Me 10,Truly Me,Light Green,Brown,Classic,Light,10
+Truly Me 100,Truly Me,Blue,Brown,Classic,Light,10
+Truly Me 101,Truly Me,Grey,Caramel,Classic,Light,10
+Truly Me 102,Truly Me,Blue,Red,Classic,Light,10
+Truly Me 103,Truly Me,Green,Blonde,Classic,Light,10
+Truly Me 104,Truly Me,Blue,Blonde,Classic,Light,5
+Truly Me 105,Truly Me,Blue,Black,Classic,Light,10
+Truly Me 106,Truly Me,Brown,Brown,Addy,Dark,35
+Truly Me 107,Truly Me,Brown,Black,Josefina,Light,10
+Truly Me 108,Truly Me,Brown,Brown,Josefina,Medium,25
+Truly Me 109,Truly Me,Grey,Blonde,Josefina,Dark,35
+Truly Me 11,Truly Me,Brown,Black,Addy,Medium,20
+Truly Me 110,Truly Me,Blue,Blonde,Jess,Light,5
+Truly Me 111,Truly Me,Brown,Black,Jess,Light,5
+Truly Me 112,Truly Me,Brown,Brown,Sonali,Dark,30
+Truly Me 113,Truly Me,Brown,Black,Sonali,Dark,30
+Truly Me 114,Truly Me,Brown,No Hair,Sonali,Dark,30
+Truly Me 115,Truly Me,Grey,Blonde,Marie-Grace,Light,5
+Truly Me 116,Truly Me,Blue,Unnatural,Marie-Grace,Light,5
+Truly Me 117,Truly Me,Brown,Brown,Marie-Grace,Medium,25
+Truly Me 118,Truly Me,Hazel,Caramel,Nanea,Light,5
+Truly Me 119,Truly Me,Blue,Unnatural,Nanea,Light,10
+Truly Me 12,Truly Me,Brown,Blonde,Classic,Light,10
+Truly Me 120,Truly Me,Hazel,Brown,Nanea,Medium,20
+Truly Me 121,Truly Me,Brown,Brown,Joss,Light,10
+Truly Me 122,Truly Me,Brown,Brown,Joss,Medium,20
+Truly Me 123,Truly Me,Brown,Black,Makena,Dark,35
+Truly Me 124,Truly Me,Brown,Black,Corinne,Light,10
+Truly Me 125,Truly Me,Hazel,Blonde,Josefina,Light,5
+Truly Me 126,Truly Me,Dark Blue,Brown,Classic,Light,5
+Truly Me 127,Truly Me,Hazel,Brown,Josefina,Dark,35
+Truly Me 128,Truly Me,Green,Black,Josefina,Light,10
+Truly Me 129,Truly Me,Blue,Unnatural,Classic,Light,5
+Truly Me 13,Truly Me,Brown,Brown,Classic,Light,10
+Truly Me 14,Truly Me,Light Blue,Brown,Classic,Light,10
+Truly Me 15,Truly Me,Brown,Black,Classic,Medium,20
+Truly Me 16,Truly Me,Brown,Brown,Classic,Light,10
+Truly Me 17,Truly Me,Light Blue,Red,Classic,Light,10
+Truly Me 18,Truly Me,Brown,Black,Addy,Dark,33
+Truly Me 19,Truly Me,Light Green,Brown,Classic,Light,10
+Truly Me 2,Truly Me,Brown,Brown,Classic,Medium,20
+Truly Me 20,Truly Me,Grey,Blonde,Classic,Light,10
+Truly Me 21,Truly Me,Hazel,Red,Classic,Light,10
+Truly Me 22,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 23,Truly Me,Light Blue,Brown,Classic,Light,10
+Truly Me 24,Truly Me,Brown,Blonde,Classic,Light,10
+Truly Me 25,Truly Me,Brown,Black,Classic,Light,10
+Truly Me 26,Truly Me,Brown,Brown,Addy,Medium,20
+Truly Me 27,Truly Me,Dark Blue,Blonde,Classic,Light,10
+Truly Me 28,Truly Me,Brown,Brown,Josefina,Medium,20
+Truly Me 29,Truly Me,Brown,Brown,Classic,Medium,20
+Truly Me 3,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 30,Truly Me,Brown,Black,Jess,Light,10
+Truly Me 31,Truly Me,Brown,Black,Addy,Dark,30
+Truly Me 32,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 33,Truly Me,Light Blue,Red,Classic,Light,10
+Truly Me 34,Truly Me,Brown,Brown,Classic,Light,10
+Truly Me 35,Truly Me,Brown,Red,Classic,Light,10
+Truly Me 36,Truly Me,Hazel,Red,Classic,Light,10
+Truly Me 37,Truly Me,Green,Red,Classic,Light,10
+Truly Me 38,Truly Me,Hazel,Red,Classic,Light,10
+Truly Me 39,Truly Me,Light Blue,Caramel,Classic,Light,10
+Truly Me 4,Truly Me,Brown,Black,Asian,Light,10
+Truly Me 40,Truly Me,Brown,Black,Jess,Light,10
+Truly Me 41,Truly Me,Green,Black,Classic,Light,10
+Truly Me 42,Truly Me,Brown,Black,Classic,Medium,20
+Truly Me 43,Truly Me,Hazel,Brown,Classic,Medium,20
+Truly Me 44,Truly Me,Hazel,Brown,Classic,Medium,20
+Truly Me 45,Truly Me,Brown,Brown,Addy,Dark,30
+Truly Me 46,Truly Me,Brown,Brown,Sonali,Dark,30
+Truly Me 47,Truly Me,Brown,Black,Sonali,Dark,30
+Truly Me 48,Truly Me,Hazel,Black,Classic,Light,10
+Truly Me 49,Truly Me,Light Blue,Black,Classic,Medium,20
+Truly Me 5,Truly Me,Green,Red,Classic,Light,10
+Truly Me 50,Truly Me,Brown,Black,Addy,Dark,30
+Truly Me 51,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 52,Truly Me,Green,Blonde,Classic,Light,10
+Truly Me 53,Truly Me,Brown,Blonde,Josefina,Light,10
+Truly Me 54,Truly Me,Brown,Black,Jess,Light,10
+Truly Me 55,Truly Me,Hazel,Brown,Classic,Light,10
+Truly Me 56,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 57,Truly Me,Brown,Brown,Classic,Light,10
+Truly Me 58,Truly Me,Brown,Black,Addy,Dark,30
+Truly Me 59,Truly Me,Brown,Brown,Classic,Light,10
+Truly Me 6,Truly Me,Light Green,Blonde,Classic,Light,10
+Truly Me 60,Truly Me,Light Blue,Black,Classic,Light,10
+Truly Me 61,Truly Me,Green,Red,Classic,Light,10
+Truly Me 62,Truly Me,Brown,Brown,Sonali,Medium,20
+Truly Me 63,Truly Me,Light Blue,Blonde,Classic,Light,10
+Truly Me 64,Truly Me,Brown,Brown,Jess,Light,10
+Truly Me 65,Truly Me,Light Blue,Red,Classic,Light,10
+Truly Me 66,Truly Me,Brown,Black,Josefina,Medium,20
+Truly Me 67,Truly Me,Brown,Black,Sonali,Dark,30
+Truly Me 68,Truly Me,Brown,Brown,Josefina,Light,10
+Truly Me 69,Truly Me,Brown,Black,Classic,Light,10
+Truly Me 7,Truly Me,Green,Brown,Classic,Light,10
+Truly Me 70,Truly Me,Light Blue,No Hair,Classic,Light,10
+Truly Me 71,Truly Me,Brown,No Hair,Classic,Light,10
+Truly Me 72,Truly Me,Brown,No Hair,Jess,Light,10
+Truly Me 73,Truly Me,Brown,No Hair,Sonali,Dark,30
+Truly Me 74,Truly Me,Light Blue,Blonde,Classic,Light,5
+Truly Me 75,Truly Me,Brown,Black,Jess,Light,10
+Truly Me 76,Truly Me,Brown,Black,Sonali,Medium,20
+Truly Me 77,Truly Me,Brown,Black,Addy,Dark,30
+Truly Me 78,Truly Me,Green,Blonde,Classic,Light,5
+Truly Me 79,Truly Me,Hazel,Brown,Jess,Medium,25
+Truly Me 8,Truly Me,Light Green,Red,Classic,Light,10
+Truly Me 80,Truly Me,Brown,Black,Josefina,Dark,35
+Truly Me 81,Truly Me,Brown,Caramel,Classic,Light,5
+Truly Me 82,Truly Me,Brown,Black,Josefina,Medium,25
+Truly Me 83,Truly Me,Hazel,Blonde,Josefina,Light,5
+Truly Me 84,Truly Me,Brown,Black,Jess,Light,5
+Truly Me 85,Truly Me,Brown,Black,Addy,Dark,35
+Truly Me 86,Truly Me,Brown,Unnatural,Josefina,Medium,20
+Truly Me 87,Truly Me,Blue,Unnatural,Classic,Light,10
+Truly Me 88,Truly Me,Blue,Unnatural,Classic,Light,5
+Truly Me 89,Truly Me,Hazel,Brown,Josefina,Medium,20
+Truly Me 9,Truly Me,Grey,Brown,Classic,Light,10
+Truly Me 90,Truly Me,Blue,Unnatural,Josefina,Light,10
+Truly Me 91,Truly Me,Grey,Unnatural,Sonali,Dark,35
+Truly Me 92,Truly Me,Brown,Blonde,Classic,Medium,25
+Z Yang,Contemporary,Brown,Black,Jess,Light,10`;
+
+function slug(s){ return s.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+
+const DATA = RAW_CSV.trim().split('\n').slice(1).map(line=>{
+  const c = line.split(',').map(x=>x.trim());
+  return {
+    name: c[0], line: c[1], eyeColor: c[2], hairColor: c[3],
+    faceMold: c[4], skinColorBucket: c[5], skinTone: c[6]
+  };
+});
+
+// hex ramps — decorative only, not part of the source data
+const EYE_HEX = {brown:'#6B4226','dark-brown':'#3B2414',green:'#4F7942','blue-green':'#4C8C82',
+  hazel:'#8A7248','light-blue':'#A9CBE0',grey:'#9CA3A3',blue:'#4A73A8','light-green':'#8FAE6B',
+  'dark-blue':'#33517A',turquoise:'#2FA3A0','light-brown':'#8A6239'};
+const HAIR_HEX = {black:'#171412',red:'#9C4A26',blonde:'#D9BD7A',brown:'#5B3A22',caramel:'#A97442',
+  'no-hair':'#D8D2C2','unnatural':'linear-gradient(135deg,#E77FA1,#7FC8E7,#F2D06B)'};
+const SKINTONE_HEX = {3:'#F6DFC4',5:'#F0D3AF',10:'#E4B78C',20:'#C4915F',23:'#B47F4C',25:'#A66F3E',30:'#7C4A28',33:'#63371C',35:'#4B2712'};
+
+function buildDomain(field, hexMap, opts){
+  const seen = new Map();
+  DATA.forEach(row=>{
+    const raw = row[field];
+    const key = slug(String(raw));
+    if(!seen.has(key)) seen.set(key, raw);
+  });
+  let entries = [...seen.entries()].map(([v,label])=>({v, n:label, hex:(hexMap && hexMap[v]) || (hexMap && hexMap[label]) || '#C7BFAE'}));
+  if(opts && opts.numeric) entries.sort((a,b)=>Number(a.n)-Number(b.n));
+  else entries.sort((a,b)=>a.n.localeCompare(b.n));
+  return entries;
+}
+
+/* =====================================================================
+   FACE-MOLD SILHOUETTES — original abstract outlines, not traced from
+   any real doll. Each mold is defined by six symmetric control points
+   (top / forehead / cheek / cheek-lower / jaw / chin); tweak the numbers
+   below to reshape one. To hand-replace a shape entirely, add a raw
+   <svg>...</svg> string to FACE_SVG_OVERRIDES keyed by the mold's slug
+   (e.g. "marie-grace") — it will be used instead of the generated one.
+   ===================================================================== */
+const FACE_PARAMS = {
+  classic:      { top:12, forehead:{dx:20,y:20}, cheek:{dx:28,y:38}, cheekLower:{dx:25,y:56}, jaw:{dx:15,y:72}, chin:84 },
+  josefina:     { top:10, forehead:{dx:17,y:19}, cheek:{dx:24,y:38}, cheekLower:{dx:21,y:58}, jaw:{dx:12,y:76}, chin:90 },
+  addy:         { top:14, forehead:{dx:22,y:22}, cheek:{dx:30,y:40}, cheekLower:{dx:29,y:54}, jaw:{dx:20,y:68}, chin:78 },
+  sonali:       { top:12, forehead:{dx:24,y:20}, cheek:{dx:32,y:36}, cheekLower:{dx:20,y:54}, jaw:{dx:10,y:68}, chin:86 },
+  claudie:      { top:13, forehead:{dx:24,y:20}, cheek:{dx:30,y:38}, cheekLower:{dx:29,y:58}, jaw:{dx:27,y:72}, chin:80 },
+  corinne:      { top:11, forehead:{dx:16,y:19}, cheek:{dx:22,y:36}, cheekLower:{dx:18,y:56}, jaw:{dx:11,y:74}, chin:88 },
+  joss:         { top:15, forehead:{dx:23,y:23}, cheek:{dx:31,y:42}, cheekLower:{dx:30,y:56}, jaw:{dx:22,y:68}, chin:76 },
+  jess:         { top:12, forehead:{dx:19,y:20}, cheek:{dx:26,y:39}, cheekLower:{dx:23,y:57}, jaw:{dx:14,y:73}, chin:85 },
+  kaya:         { top:12, forehead:{dx:25,y:19}, cheek:{dx:29,y:37}, cheekLower:{dx:27,y:58}, jaw:{dx:24,y:73}, chin:82 },
+  'marie-grace':{ top:13, forehead:{dx:18,y:21}, cheek:{dx:25,y:39}, cheekLower:{dx:22,y:57}, jaw:{dx:13,y:72}, chin:84 },
+  makena:       { top:11, forehead:{dx:21,y:19}, cheek:{dx:29,y:35}, cheekLower:{dx:24,y:55}, jaw:{dx:19,y:71}, chin:82 },
+  nanea:        { top:15, forehead:{dx:22,y:23}, cheek:{dx:30,y:41}, cheekLower:{dx:28,y:57}, jaw:{dx:19,y:70}, chin:80 },
+  asian:        { top:12, forehead:{dx:18,y:20}, cheek:{dx:25,y:38}, cheekLower:{dx:22,y:56}, jaw:{dx:13,y:73}, chin:87 },
+};
+
+function smoothClosedPath(points){
+  const mid=(a,b)=>({x:(a.x+b.x)/2,y:(a.y+b.y)/2});
+  const n = points.length;
+  let d = `M ${mid(points[n-1],points[0]).x.toFixed(1)} ${mid(points[n-1],points[0]).y.toFixed(1)} `;
+  for(let i=0;i<n;i++){
+    const next = points[(i+1)%n];
+    const m = mid(points[i], next);
+    d += `Q ${points[i].x.toFixed(1)} ${points[i].y.toFixed(1)} ${m.x.toFixed(1)} ${m.y.toFixed(1)} `;
+  }
+  return d + 'Z';
+}
+
+function buildFaceSVG(p){
+  const cx=50;
+  const ring = [
+    {x:cx, y:p.top},
+    {x:cx+p.forehead.dx, y:p.forehead.y},
+    {x:cx+p.cheek.dx, y:p.cheek.y},
+    {x:cx+p.cheekLower.dx, y:p.cheekLower.y},
+    {x:cx+p.jaw.dx, y:p.jaw.y},
+    {x:cx, y:p.chin},
+    {x:cx-p.jaw.dx, y:p.jaw.y},
+    {x:cx-p.cheekLower.dx, y:p.cheekLower.y},
+    {x:cx-p.cheek.dx, y:p.cheek.y},
+    {x:cx-p.forehead.dx, y:p.forehead.y},
+  ];
+  const d = smoothClosedPath(ring);
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="${d}" fill="#EDE6D6" stroke="#201F1C" stroke-width="3" stroke-linejoin="round"/></svg>`;
+}
+
+// Hand-drawn replacements go here, keyed by mold slug, e.g.:
+// const FACE_SVG_OVERRIDES = { classic: '<svg viewBox="0 0 100 100">...custom path...</svg>' };
+const FACE_SVG_OVERRIDES = {};
+
+const FACE_SVGS = {};
+Object.keys(FACE_PARAMS).forEach(slugKey=>{
+  FACE_SVGS[slugKey] = FACE_SVG_OVERRIDES[slugKey] || buildFaceSVG(FACE_PARAMS[slugKey]);
+});
+
+const ATTRIBUTES = {
+  skinTone:  { label:"Skin Tone",  field:"skinTone",  swatchType:'color', hex:SKINTONE_HEX, numeric:true,
+               domain: buildDomain('skinTone', SKINTONE_HEX, {numeric:true}) },
+  faceMold:  { label:"Face Mold",  field:"faceMold",  swatchType:'face',
+               domain: buildDomain('faceMold') },
+  hairColor: { label:"Hair Color", field:"hairColor", swatchType:'color', hex:HAIR_HEX,
+               domain: buildDomain('hairColor', HAIR_HEX) },
+  eyeColor:  { label:"Eye Color",  field:"eyeColor",  swatchType:'color', hex:EYE_HEX,
+               domain: buildDomain('eyeColor', EYE_HEX) },
+};
+// fix skinTone entries to carry the right hex (keyed by numeric label, not slug)
+ATTRIBUTES.skinTone.domain.forEach(e=>{ e.hex = SKINTONE_HEX[e.n] || '#C7BFAE'; e.bucket = (DATA.find(r=>r.skinTone===e.n)||{}).skinColorBucket; });
+
+/* ===================== game engine ===================== */
+
+const $app = document.getElementById('app');
+document.getElementById('issueDate').textContent = new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+document.getElementById('datasetFlag').textContent = "Dataset: " + DATA.length + " dolls across three distinct product lines, not all of which are available for purchase as of this publication.";
+
+let layerOrder = ['skinTone','faceMold','hairColor','eyeColor'];
+let state = {};
+
+function offeredValues(key){
+  const field = ATTRIBUTES[key].field;
+  return new Set(DATA.map(r=>slug(String(r[field]))));
+}
+function compatibleValues(key, selectionsSoFar){
+  const rows = DATA.filter(r => Object.entries(selectionsSoFar).every(([k,v])=>{
+    const f = ATTRIBUTES[k].field;
+    return slug(String(r[f])) === v;
+  }));
+  const field = ATTRIBUTES[key].field;
+  return new Set(rows.map(r=>slug(String(r[field]))));
+}
+
+function renderReorderScreen(){
+  const subs = {
+    skinTone:"the full range of available skin tones, with the company's internal color code",
+    faceMold:"the sculpted head shape, reused across many characters.",
+    hairColor:"hair color range as defined by the company, including \u201cNo Hair\u201d and \u201cUnnatural\u201d",
+    eyeColor:"eye color range as defined by the company"
+  };
+  let html = `<div class="card">
+    <div class="step-label">Step 0 · Set the order</div>
+    <h2 class="step-title">Which feature do you pick first?</h2>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:6px;margin-bottom:16px;">Reorder however you like, then start.</p>`;
+  layerOrder.forEach((key,i)=>{
+    html += `<div class="order-row">
+      <div class="num">${i+1}</div>
+      <div style="flex:1;">
+        <div class="label">${ATTRIBUTES[key].label}</div>
+        <div class="sub">${subs[key]}</div>
+      </div>
+      <div class="arrows">
+        <button ${i===0?'disabled':''} onclick="moveLayer(${i},-1)">↑</button>
+        <button ${i===layerOrder.length-1?'disabled':''} onclick="moveLayer(${i},1)">↓</button>
+      </div>
+    </div>`;
+  });
+  html += `<button class="primary" onclick="startGame()">Start Building →</button></div>`;
+  $app.innerHTML = html;
+}
+
+window.moveLayer = function(i, dir){
+  const j = i+dir;
+  if(j<0 || j>=layerOrder.length) return;
+  [layerOrder[i],layerOrder[j]] = [layerOrder[j],layerOrder[i]];
+  renderReorderScreen();
+}
+window.startGame = function(){
+  state = { step:0, selections:{}, gaps:[] };
+  renderStep();
+}
+window.restart = function(){ renderReorderScreen(); }
+
+function renderBreadcrumb(){
+  const keys = Object.keys(state.selections);
+  if(!keys.length) return '';
+  let html = '<div class="breadcrumb">';
+  keys.forEach(k=>{
+    const val = state.selections[k];
+    const def = ATTRIBUTES[k].domain.find(d=>d.v===val);
+    const dotStyle = `background:${def.hex||'#C7BFAE'}`;
+    html += `<div class="crumb"><div class="dot" style="${dotStyle}"></div>${ATTRIBUTES[k].label}: ${def.n}</div>`;
+  });
+  return html + '</div>';
+}
+
+function renderStep(){
+  const key = layerOrder[state.step];
+  const attr = ATTRIBUTES[key];
+  const compatible = compatibleValues(key, state.selections);
+
+  let progress = '<div class="progress">';
+  layerOrder.forEach((k,i)=>{
+    let cls = 'seg';
+    if(i < state.step) cls += ' done'; else if(i === state.step) cls += ' active';
+    progress += `<div class="${cls}"></div>`;
+  });
+  progress += '</div>';
+
+  let chips = '<div class="chip-grid">';
+  attr.domain.forEach(opt=>{
+    const unavailable = !compatible.has(opt.v);
+    let swatchHtml;
+    if(attr.swatchType === 'face'){
+      const svg = FACE_SVGS[opt.v];
+      swatchHtml = svg
+        ? `<div class="badge face">${svg}</div>`
+        : `<div class="badge">${opt.n.slice(0,2).toUpperCase()}</div>`;
+    } else if(attr.swatchType === 'mono'){
+      swatchHtml = `<div class="badge">${opt.n.slice(0,2).toUpperCase()}</div>`;
+    } else {
+      swatchHtml = `<div class="swatch" style="background:${opt.hex}"></div>`;
+    }
+    chips += `<div class="chip ${unavailable?'unavailable':''}" onclick="pick('${key}','${opt.v}', ${unavailable})">
+        ${swatchHtml}
+        <div class="name">${opt.n}${key==='skinTone'?` <span style="color:var(--ink-soft)">(${opt.bucket})</span>`:''}</div>
+        <div class="stamp">NO MATCH</div>
+      </div>`;
+  });
+  chips += '</div>';
+
+  $app.innerHTML = `
+    <div class="card">
+      ${progress}
+      ${renderBreadcrumb()}
+      <div class="step-label">Layer ${state.step+1} of ${layerOrder.length}</div>
+      <h2 class="step-title">Choose a ${attr.label.toLowerCase()}</h2>
+      <div class="step-sub">${state.step===0 ? 'Every value on record starts available.' : "Grayed-out values have never occurred together with what you've already picked."}</div>
+      ${chips}
+      <div class="note" id="gapNote"></div>
+    </div>
+    <button class="ghost" onclick="restart()">↺ start over</button>
+  `;
+}
+
+window.pick = function(key, value, unavailable){
+  if(unavailable){
+    const attr = ATTRIBUTES[key];
+    const def = attr.domain.find(d=>d.v===value);
+    const already = state.gaps.find(g=>g.key===key && g.wanted===value);
+    if(!already) state.gaps.push({key, wanted:value, label:attr.label, name:def.n});
+    const note = document.getElementById('gapNote');
+    note.classList.add('show');
+    note.textContent = `"${def.n}" has never appeared alongside your other picks in this dataset — noted. Pick an available option to keep going.`;
+    return;
+  }
+  state.selections[key] = value;
+  state.step++;
+  if(state.step >= layerOrder.length) renderResults();
+  else renderStep();
+}
+
+function renderResults(){
+  const exactMatch = DATA.find(r => Object.entries(state.selections).every(([k,v])=>{
+    const f = ATTRIBUTES[k].field;
+    return slug(String(r[f])) === v;
+  }));
+
+  // coverage stats: how many other dolls in the dataset share each feature the player picked
+  let statLines = '';
+  Object.keys(state.selections).forEach(key=>{
+    const attr = ATTRIBUTES[key];
+    const value = state.selections[key];
+    const def = attr.domain.find(d=>d.v===value);
+    const matches = DATA.filter(r => slug(String(r[attr.field])) === value).length;
+    const otherCount = exactMatch ? matches - 1 : matches;
+    statLines += `<div class="stat"><span>${attr.label}: <span class="n">${otherCount}</span> other doll${otherCount===1?'':'s'} ${otherCount===1?'has':'have'} this feature.</span></div>`;
+  });
+
+  // mold-per-skin-bucket callout
+  const buckets = ['Light','Medium','Dark'];
+  const totalMolds = new Set(DATA.map(r=>r.faceMold)).size;
+  const bucketMoldCounts = buckets.map(b=>{
+    const molds = new Set(DATA.filter(r=>r.skinColorBucket===b).map(r=>r.faceMold));
+    return `${b}: ${molds.size}/${totalMolds} molds`;
+  }).join(' · ');
+
+  const classicShare = Math.round(100 * DATA.filter(r=>r.faceMold==='Classic').length / DATA.length);
+
+  let gapHtml = '';
+  if(state.gaps.length){
+    gapHtml = '<ul class="gaplist">' + state.gaps.map(g=>{
+      return `<li><strong>${g.label}: ${g.name}</strong> — exists in the dataset, but never in combination with the rest of your build.</li>`;
+    }).join('') + '</ul>';
+  }
+
+  const verdict = exactMatch
+    ? `This exact combination belongs to <span class="who">${exactMatch.name}</span>, from the ${exactMatch.line} line.`
+    : `No doll in this dataset matches your exact combination — this face has no catalog record.`;
+
+  $app.innerHTML = `
+    <div class="card">
+      <div class="step-label">Result</div>
+      <h2 class="step-title">Here's who you built:</h2>
+      ${renderBreadcrumb()}
+      <div class="verdict">${verdict}</div>
+      ${state.gaps.length ? `<h3 style="font-size:14px;margin:18px 0 6px;">Along the way, ${state.gaps.length} option${state.gaps.length>1?'s':''} you reached for weren't reachable:</h3>${gapHtml}` : `<p style="font-size:13px;color:var(--ink-soft);">Every option you reached for first was available — no gaps recorded this run.</p>`}
+      <h2 style="font-size:14px;margin:22px 0 6px;">How Your Choices Compare to the Full Catalog: </h2>
+      ${statLines}
+
+      <div class="callout">
+        <strong>Face molds by skin tone bucket:</strong> ${bucketMoldCounts}.<br>
+        The "Classic" mold alone accounts for about ${classicShare}% of every doll on record.
+      </div>
+    </div>
+    <button class="primary" onclick="restart()">Build another girl →</button>
+  `;
+}
+
+renderReorderScreen();
+</script>
+
+
+</body>
+</html>
